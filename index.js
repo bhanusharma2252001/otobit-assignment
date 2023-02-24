@@ -17,6 +17,7 @@ app.get("/",( req, res )=> {
 
 // author module
 app.post("/author",( req, res ) => {
+  
   if(authors.length!=0) {
     const isNameExist = authors.find(author=>author.name === req.body.name)
     if(isNameExist) return res.status(400).json({ message:'failure',error:'author already exist'})
@@ -57,6 +58,7 @@ app.patch("/author/:id", ( req, res)=> {
 })
 
 app.delete("/author/:id", (req, res)=> {
+ 
   const foundAuthor = authors.find((author)=>author.id === req.params.id);
   if(!foundAuthor)  return res.status(400).json({ message:'failure',error:'author id does not exist'})
 
@@ -68,6 +70,7 @@ app.delete("/author/:id", (req, res)=> {
 })
 
 app.get("/author/getAllbooksOfAuthor/:id", ( req, res)=> {
+  
   const foundAuthor = authors.find((author)=>author.id === req.params.id);
   if(!foundAuthor)  return res.status(400).json({ message:'failure',error:'author id does not exist'});
 
@@ -83,6 +86,7 @@ app.get("/author/getAllbooksOfAuthor/:id", ( req, res)=> {
 
 // book module 
 app.post("/book",( req, res ) => {
+  
   if( books.length != 0 ) {
     const isISBNExist = books.find((book)=>book.ISBN === req.body.ISBN);
     if(isISBNExist) return res.status(400).json( { message: 'failure', error: ' ISBN already exists'})
@@ -124,6 +128,7 @@ app.patch("/book/:id", ( req, res ) => {
 })
 
 app.delete("/book/:id", (req, res )=> {
+  
   const foundBook = books.find((book)=>book.id === req.params.id);
   if(!foundBook)  return res.status(400).json({ message:'failure',error:'book id does not exist'})
 
@@ -135,6 +140,7 @@ app.delete("/book/:id", (req, res )=> {
 })
 
 app.get("/getBookWithAuthor/:id", ( req, res )=> {
+  
   const foundBook = books.find((book)=>book.id === req.params.id);
   if(!foundBook)  return res.status(400).json({ message:'failure',error:'book id does not exist'});
 
