@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "85d00326-6f90-4cae-8294-cfe0d53b0c2a",
+		"name": "assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20031800"
+	},
+	"item": [
+		{
+			"name": "author",
+			"item": [
+				{
+					"name": "add author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bhavnesh Sharma05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/author/",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"author",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all authors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update author",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"12\",\r\n    \"name\": \"Bhavnesh Sharma12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/author/id",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"author",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete authors",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get author and his all books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhpst:3001/author/getAllbooksOfAuthor/id",
+							"host": [
+								"localhpst"
+							],
+							"port": "3001",
+							"path": [
+								"author",
+								"getAllbooksOfAuthor",
+								"id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "add book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\":\"1\",\r\n    \"bookName\":\"Harry Potter\",\r\n    \"ISBN\":\"FGF43534\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/book",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all books",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update book",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorId\":\"e019ea6b-eb47-41a0-acf9-b889d186e748\",\r\n    \"bookName\":\"Harry Potter\",\r\n    \"ISBN\":\"FGF43535\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/book/305e8a32-0380-4571-bbab-295a30da6858",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"book",
+								"305e8a32-0380-4571-bbab-295a30da6858"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete book",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get book and its author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/getBookWithAuthor/592e6567-7d44-4490-acc7-72db60c33e98",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"getBookWithAuthor",
+								"592e6567-7d44-4490-acc7-72db60c33e98"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
